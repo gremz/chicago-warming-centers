@@ -69,6 +69,7 @@ angular.module('mapApp')
           var $input = $('.search').first();
           $input.val(this.title);
           $input.trigger('input');
+          $('.description').show();
         });
       }
     }
