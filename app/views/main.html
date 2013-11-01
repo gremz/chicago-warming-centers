@@ -1,0 +1,34 @@
+<div class="row-fluid">
+  <div class="span2 data_container" ng-controller="GetData">
+    <!--Sidebar content-->
+
+    <div class="search-container input-append">
+      <input class="search span10" type="text" ng-model="query" placeholder="Find by name...">
+      <button type="submit" class="btn">
+        <b class="icon">x</b>
+      </button>
+    </div>
+
+      <ul class="scrollable_data_container nav nav-tabs nav-stacked">
+        <li ng-repeat="location in data.rawData | filter:query" style="display: block;">
+          <a href="#" ng-click="showInfo($event)">{{location.site_name}}
+            <span class="caret"></span>
+            <span class="caret open-caret"><span>
+          </a>
+          <address class="description hide well well-small">
+            <h5>{{location.address}}, {{location.city}}, {{location.state}} {{location.zip}}</h5><br>
+            <small>{{location.phone}}</small><br>
+            <small>{{location.hours_of_operation}}</small><br>
+            <small>{{location.additional_notes}}</small>
+          </address>
+        </li>
+      </ul>
+
+  </div>
+  <div class="span10 google_map_container">
+    <div id="map-canvas"></div>
+  </div>
+</div>
+<div class="alert alert-info text-center">
+  {{data.status}}
+</div>

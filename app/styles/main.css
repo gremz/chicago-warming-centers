@@ -1,0 +1,88 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    height: 100%;
+    overflow: hidden;
+}
+/*
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}*/
+
+/* Fix height for google maps v3*/
+
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.container-fluid,
+.row-fluid { height: inherit; }
+
+#map-canvas,
+.google_map_container {
+    height: 100%;
+}
+
+.data_container {
+    height: inherit;
+}
+
+.scrollable_data_container {
+    height: inherit;
+    overflow-y: auto;
+}
+
+#map-canvas img {
+    max-width: none;
+}
+
+/* Alerts */
+
+.alert {
+    display: none;
+    width: 100%;
+    left: 0;
+}
+
+.description {
+    margin-bottom: 0;
+}
+
+/* end Alerts */
+
+.caret {
+    float: right;
+    margin-top: 8px;
+    border-top-color: #0088cc;
+}
+
+.caret.open-caret {
+    display: none;
+    margin-top: 4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid #0088cc;
+}
+
+.icon {
+    color: #0088cc;
+}
+
+.search-container {
+    width: 100%;
+}
