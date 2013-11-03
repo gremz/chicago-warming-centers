@@ -86,3 +86,34 @@ body {
 .search-container {
     width: 100%;
 }
+
+.information-container {
+    display: inline-block;
+    padding: 0 4px 5px 4px;
+    margin-left: 8px;
+    background-color: #0088cc;
+    -webkit-transition: background-color 0.4s ease-out;
+    -moz-transition: background-color 0.4s ease-out;
+    -o-transition: background-color 0.4s ease-out;
+    transition: background-color 0.4s ease-out;
+}
+
+.information-container:hover {
+    background-color: #ffb35c;
+}
+
+.about {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}

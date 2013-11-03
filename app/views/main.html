@@ -3,19 +3,22 @@
     <!--Sidebar content-->
 
     <div class="search-container input-append">
-      <input class="search span10" type="text" ng-model="query" placeholder="Find by name...">
-      <button type="submit" class="btn">
-        <b class="icon">x</b>
-      </button>
+        <input name="query" class="search span8" type="text" ng-model="query" placeholder="Find by name...">
+        <button class="btn" ng-click="clearQuery()">
+          <b class="icon">x</b>
+        </button>
+        <div class="information-container">
+          <i class="icon-white icon-info-sign"></i>
+        </div>
     </div>
 
       <ul class="scrollable_data_container nav nav-tabs nav-stacked">
         <li ng-repeat="location in data.rawData | filter:query" style="display: block;">
           <a href="#" ng-click="showInfo($event)">{{location.site_name}}
             <span class="caret"></span>
-            <span class="caret open-caret"><span>
+            <span class="caret open-caret"></span>
           </a>
-          <address class="description hide well well-small">
+          <address class="description hide well well-small" data-uid="{{location.location.longitude.split('.')[1]}}">
             <h5>{{location.address}}, {{location.city}}, {{location.state}} {{location.zip}}</h5><br>
             <small>{{location.phone}}</small><br>
             <small>{{location.hours_of_operation}}</small><br>

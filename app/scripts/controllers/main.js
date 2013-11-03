@@ -29,6 +29,9 @@ angular.module('mapApp')
         $scope.data.status = !resourceIndex && 'Data OK!' || ('Data backup #' + resourceIndex + ' used'); // if index >0 return error msg
         $scope.data.rawData = data;
 
+        // Reset data
+        $scope.data.resetData = angular.copy($scope.data.rawData);
+
         addDataPoints(data);
 
         flashAlert($alert);
@@ -57,9 +60,9 @@ angular.module('mapApp')
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(location.latitude, location.longitude),
           map: wcm.map,
-          title: rawData[i].site_name
+          title: rawData[i].site_name,
+          uId: rawData[i].location.longitude.split('.')[1]
         });
-        console.log(rawData[i].site_name);
 
         // "this" is the current marker
         google.maps.event.addListener(marker, 'click', function() {
@@ -69,7 +72,7 @@ angular.module('mapApp')
           var $input = $('.search').first();
           $input.val(this.title);
           $input.trigger('input');
-          $('.description').show();
+          $('.description[data-uid="' + this.uId + '"').show();
         });
       }
     }
@@ -104,6 +107,11 @@ angular.module('mapApp')
       $title.siblings().toggle();
       $title.find('.caret').first().toggle();
       $title.find('.open-caret').toggle();
+    };
+
+    $scope.clearQuery = function() {
+      var $searchInput = $('.search-container .search');
+      $scope.query = '';
     };
 
   });
