@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('mapApp')
-.controller('MainCtrl', function ($scope) {
+.controller('MainCtrl', function ($scope, $cookies) {
   $scope.awesomeThings = [
   'HTML5 Boilerplate',
   'AngularJS',
   'Karma'
   ];
   $scope.data = { message: 'FLAG!'};
+
+  if (!$cookies.firstTimer) {
+    $cookies.firstTimer = '1';
+    $('#infoModal').modal('show');
+  }
 });
 
 angular.module('mapApp')

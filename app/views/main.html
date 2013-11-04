@@ -7,7 +7,7 @@
         <button class="btn" ng-click="clearQuery()">
           <b class="icon">x</b>
         </button>
-        <div class="information-container">
+        <div class="information-container" data-toggle="modal" data-target="#infoModal">
           <i class="icon-white icon-info-sign"></i>
         </div>
     </div>
@@ -32,6 +32,20 @@
     <div id="map-canvas"></div>
   </div>
 </div>
+<!-- Data Status -->
 <div class="alert alert-info text-center">
   {{data.status}}
+</div>
+<!-- Info Modal -->
+<div id="infoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Welcome to ChicagoWarmingCenters.com</h3>
+  </div>
+  <div class="modal-body">
+    <p>This website was created with the intention to provide a good source of information about warming centers in Chicago. All data is provided by the City of Chicago through the <a href="https://data.cityofchicago.org/" target="_new">Chicago Open Data project.</a></p>
+    <p class="text-right">Designed by <a href="http://gregremiasz.com" target="_new">Greg Remiasz</a></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
 </div>
