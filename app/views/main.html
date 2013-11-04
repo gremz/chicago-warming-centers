@@ -1,7 +1,6 @@
 <div class="row-fluid">
   <div class="span2 data_container" ng-controller="GetData">
-    <!--Sidebar content-->
-
+    <!-- Sidebar content -->
     <div class="search-container input-append">
         <input name="query" class="search span8" type="text" ng-model="query" placeholder="Find by name...">
         <button class="btn" ng-click="clearQuery()">
@@ -11,7 +10,6 @@
           <i class="icon-white icon-info-sign"></i>
         </div>
     </div>
-
       <ul class="scrollable_data_container nav nav-tabs nav-stacked">
         <li ng-repeat="location in data.rawData | filter:query" style="display: block;">
           <a href="#" ng-click="showInfo($event)">{{location.site_name}}
@@ -26,8 +24,8 @@
           </address>
         </li>
       </ul>
-
   </div>
+  <!-- Map content -->
   <div class="span10 google_map_container">
     <div id="map-canvas"></div>
   </div>
@@ -43,6 +41,7 @@
   </div>
   <div class="modal-body">
     <p>This website was created with the intention to provide a good source of information about warming centers in Chicago. All data is provided by the City of Chicago through the <a href="https://data.cityofchicago.org/" target="_new">Chicago Open Data project.</a></p>
+    <p>You may call <b>311</b> to locate a Warming Center in your area, or go to <a href="http://bit.ly/kIhHPj" target="_new">here</a> for more information.</p>
     <p class="text-right">Designed by <a href="http://gregremiasz.com" target="_new">Greg Remiasz</a></p>
   </div>
   <div class="modal-footer">
