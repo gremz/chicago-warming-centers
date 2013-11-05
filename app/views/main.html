@@ -1,5 +1,5 @@
-<div class="row-fluid">
-  <div class="span2 data_container" ng-controller="GetData">
+<div class="row-fluid" ng-controller="GetData">
+  <div class="span2 data_container">
     <!-- Sidebar content -->
     <div class="search-container input-append">
         <input name="query" class="search span8" type="text" ng-model="query" placeholder="Find by name...">
@@ -31,16 +31,15 @@
   </div>
 </div>
 <!-- Data Status -->
-<div class="alert alert-info text-center">
-  {{data.status}}
-</div>
+<!-- <div class="alert alert-info text-center">
+</div> -->
 <!-- Info Modal -->
 <div id="infoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <h3 id="myModalLabel">Welcome to ChicagoWarmingCenters.com</h3>
   </div>
   <div class="modal-body">
-    <p>This website was created with the intention to provide a good source of information about warming centers in Chicago. All data is provided by the City of Chicago through the <a href="https://data.cityofchicago.org/" target="_new">Chicago Open Data project.</a></p>
+    <p>This website was created with the intention to provide a good source of information about warming centers in Chicago. You can view all this information on your favorite device at any time. All data is provided by the City of Chicago through the <a href="https://data.cityofchicago.org/" target="_new">Chicago Open Data project.</a></p>
     <p>You may call <b>311</b> to locate a Warming Center in your area, or go to <a href="http://bit.ly/kIhHPj" target="_new">here</a> for more information.</p>
     <p class="text-right">Designed by <a href="http://gregremiasz.com" target="_new">Greg Remiasz</a></p>
   </div>
