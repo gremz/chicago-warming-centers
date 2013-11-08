@@ -117,3 +117,9 @@ body {
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
+
+@media (max-width: 767px) {
+    .row-fluid [class*="span"].google_map_container {
+        display: none;
+    }
+}
