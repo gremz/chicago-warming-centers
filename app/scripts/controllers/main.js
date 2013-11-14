@@ -128,8 +128,29 @@ angular.module('mapApp')
     // Toggle location description
     $scope.showInfo = function($event) {
       $event.preventDefault();
-      var $title = $($event.currentTarget);
-      $title.siblings().toggle();
+      var $title = $($event.currentTarget),
+          $address = $title.siblings(),
+          $mapContainer,
+          latitude,
+          longitude;
+
+      // If mobile
+      $mapContainer = $address.find('[data-location-latitude]');
+
+      if ($mapContainer.find('img').length < 1) {
+        latitude = $mapContainer.attr('data-location-latitude');
+        longitude = $mapContainer.attr('data-location-longitude');
+        // create and append google api image
+        var imageTemplate = 'http://maps.googleapis.com/maps/api/staticmap?center=${lat},${long}&markers=${lat},${long}&zoom=15&size=300x300&sensor=true&key=AIzaSyDxg2VY-h1P7NGLw_tGJV4-BU4yY3Dc1mQ';
+        
+        imageTemplate = imageTemplate.replace(/\$\{lat\}/g, latitude);
+        imageTemplate = imageTemplate.replace(/\$\{long\}/g, longitude);
+
+        $mapContainer.append('<img src="' + imageTemplate + '" />');
+        
+        $mapContainer.toggle();
+      }
+      $address.toggle();
       $title.find('.caret').first().toggle();
       $title.find('.open-caret').toggle();
     };

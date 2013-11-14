@@ -16,11 +16,12 @@
             <span class="caret"></span>
             <span class="caret open-caret"></span>
           </a>
-          <address class="description hide well well-small" data-uid="{{location.location.longitude.split('.')[1]}}">
+          <address class="description hide well well-small" data-uid="{{location.location.longitude}}">
             <h5>{{location.address}}, {{location.city}}, {{location.state}} {{location.zip}}</h5><br>
             <small>{{location.phone}}</small><br>
             <small>{{location.hours_of_operation}}</small><br>
             <small>{{location.additional_notes}}</small>
+            <small class="hide" data-location-longitude="{{location.location.longitude}}" data-location-latitude="{{location.location.latitude}}"></small>
           </address>
         </li>
       </ul>
@@ -31,7 +32,8 @@
   </div>
 </div>
 <!-- Data Status -->
-<div class="alert alert-info text-center"></div>
+<div class="alert alert-info text-center">
+</div>
 <!-- Info Modal -->
 <div id="infoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
